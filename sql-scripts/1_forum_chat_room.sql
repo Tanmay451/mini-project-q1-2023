@@ -3,5 +3,5 @@ CREATE TABLE forum_chat_room (
   name text NOT NULL,
   description text NOT NULL,
   created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
