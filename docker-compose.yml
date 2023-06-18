@@ -1,0 +1,21 @@
+version: '3'
+services:
+  chatapp:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    command: sh -c 'sleep 10 && ./init-db.sh && ./chatapp'
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: chatappuser
+      POSTGRES_PASSWORD: chatapppassword
+      POSTGRES_DB: chatappdb
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./sql-scripts:/docker-entrypoint-initdb.d
+    command: postgres -c 'shared_preload_libraries=pg_stat_statements' -c 'pg_stat_statements.track=all'
