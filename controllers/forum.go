@@ -1,13 +1,14 @@
 package controllers
 
 import (
-	models "chat-room/models"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
 
 	"github.com/gorilla/mux"
+
+	models "chatapp/models"
 )
 
 func GetForums(w http.ResponseWriter, r *http.Request) {
