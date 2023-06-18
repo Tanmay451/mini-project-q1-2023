@@ -5,7 +5,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	controllers "chat-room/controllers"
+	controllers "chatapp/controllers"
 )
 
 func main() {
